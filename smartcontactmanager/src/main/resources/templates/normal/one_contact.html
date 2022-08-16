@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="normal/base::layout(~{::section})">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+</head>
+
+<body>
+    <section>
+
+        <div class="card me-5 ms-5 mt-5 text-center">
+            <div class="card-body">
+
+                <div class="container text-center mt-5 mb-5">
+                    <img  class="my_profile_image" src="" alt="Profile Image" th:src="@{'/img/'+${contact.image}}">
+                    <h3 class="mt-5" th:text="${contact.name}+'('+${contact.secondName}+')'"></h3>
+                </div>
+                
+                
+
+                <table class="table text-center">
+                    <thead>
+                        <tr>
+                            <th scope="col">#ID</th>
+                            <th scope="col"><span th:text="'SCM2022'+${contact.cId}"></span></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="col">Phone</th>
+                            <th scope="col"><span th:text="${contact.phone}"></span></th>
+                        </tr>
+
+                        <tr>
+                            <th scope="col">Email</th>
+                            <th scope="col"><span th:text="${contact.email}"></span></th>
+                        </tr>
+
+                        <tr>
+                            <th scope="col">Work</th>
+                            <th scope="col"><span th:text="${contact.work}"></span></th>
+                        </tr>
+                    </tbody>
+                </table>
+                <div>
+                    <span th:utext="${contact.description}"></span>
+                </div>
+
+                
+
+                
+
+            </div>
+             
+            <div class="container p-5">
+                <div class="row">
+                    <button type="button" class="btn btn-success btn-lg btn-block mt-3">Update</button>
+                    <button type="button" class="btn btn-danger btn-lg btn-block mt-3">Delete</button>
+                </div>
+            
+        </div>
+            
+
+            
+             
+        </div>
+    </section>
+</body>
+
+</html>
